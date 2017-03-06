@@ -97,8 +97,8 @@ class DoctrineCouchDBExtension extends AbstractDoctrineExtension
 
         if (isset($connection['logging']) && $connection['logging'] === true) {
             $def = new Definition('Doctrine\CouchDB\HTTP\Client');
-            $def->setFactoryService(sprintf('doctrine_couchdb.client.%s_connection', $name));
-            $def->setFactoryMethod('getHttpClient');
+            //$def->setService(sprintf('doctrine_couchdb.client.%s_connection', $name));
+            //$def->setFactoryMethod('getHttpClient');
             $def->setPublic(false);
 
             $container->setDefinition(sprintf('doctrine_couchdb.httpclient.%s_client', $name), $def);
